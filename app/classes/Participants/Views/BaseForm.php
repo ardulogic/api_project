@@ -6,9 +6,6 @@ class BaseForm extends \Core\Views\Form {
 
     public function __construct($data = []) {
         $this->data = [
-            'attr' => [
-                'method' => 'POST',
-            ],
             'fields' => [
                 'name' => [
                     'label' => 'Vardas',
