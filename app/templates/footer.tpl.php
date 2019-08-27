@@ -1,0 +1,1 @@
+<span>&copy; 2019. Tyler, all rights reserved.</span>
