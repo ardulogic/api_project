@@ -1,1 +1,1 @@
-<span>&copy; 2019. Tyler Durden, all rights reserved.</span>
+<span>&copy; <?php print date('Y') ?>. Tyler Durden, all rights reserved.</span>
