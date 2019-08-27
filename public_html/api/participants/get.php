@@ -2,26 +2,19 @@
 
 require '../../../bootloader.php';
 
+$response = new \Core\Api\Response();
+
 $model = new App\Participants\Model();
 
 $conditions = $_POST ?? [];
 
-$response = [
-    'status' => null,
-    'data' => [],
-    'errors' => [],
-];
-
 $participants = $model->get($conditions);
 if ($participants !== false) {
-    $response['status'] = 'success';
-
     foreach ($participants as $person) {
-        $response['data'][] = $person->getData();
+        $response->addData($person->getData());
     }
 } else {
-    $response['status'] = 'fail';
-    $response['errors'][] = 'Database error!';
+    $response->addError('Could not pull data from database!');
 }
 
-print json_encode($response);
+$response->print();

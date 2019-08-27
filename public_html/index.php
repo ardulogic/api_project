@@ -125,6 +125,7 @@ if (!App::$session->userLoggedIn()) {
                     success: function (data) {
                         console.log(data);
                         table.row.append(data);
+                        forms.ui.errors.hide(forms.create.getElement());
                     },
                     fail: function (errors) {
                         forms.ui.errors.show(forms.create.getElement(), errors);

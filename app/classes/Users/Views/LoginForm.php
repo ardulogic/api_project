@@ -40,12 +40,12 @@ class LoginForm extends \Core\Views\Form {
                     ]
                 ],
             ],
+            'validators' => [
+                'validate_login'
+            ],            
             'callbacks' => [
                 'success' => 'form_success',
             ],
-            'validators' => [
-                'validate_login'
-            ]
         ];
     }
 

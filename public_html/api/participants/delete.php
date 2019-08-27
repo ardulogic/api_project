@@ -1,16 +1,14 @@
 <?php
 
+use App\App;
+
 require '../../../bootloader.php';
 
-$response = [
-    'status' => null,
-    'data' => [],
-    'errors' => []
-];
+$response = new \Core\Api\Response();
 
-if ($_SESSION) {
+if (App::$session->userLoggedIn()) {
 
-    $model = new App\Participants\Model();
+    $model = new \App\Participants\Model();
 
     // fetch-as atsiunčia į šitą failą POST metodu duomenis (REQUEST)
     // tie duomenys tai yra formData
@@ -29,15 +27,12 @@ if ($_SESSION) {
         $person = $participants[0];
         $model->delete($person);
 
-        $response['status'] = 'success';
-        $response['data'] = $person->getData();
+        $response->setData($person->getData());
     } else {
-        $response['status'] = 'fail';
-        $response['errors'][] = 'Participant doesn`t exist';
+        $response->addError('Participant doesn`t exist');
     }
 } else {
-    $response['status'] = 'fail';
-    $response['errors'][] = 'Authorization failed!';
+    $response->addError('Authorization failed!');
 }
 
-print json_encode($response);
+$response->print();
