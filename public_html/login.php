@@ -22,7 +22,6 @@ switch (get_form_action()) {
         validate_form($filtered_input, $form->getData());
         break;
 }
-
 ?>
 <html>
     <head>
@@ -45,10 +44,12 @@ switch (get_form_action()) {
         <!-- Main Content -->        
         <main>
             <section class="wrapper">
-                <h1>Prisijungti:</h1>
+                <div class="block">
+                    <h1>Prisijungti:</h1>
 
-                <!-- Login Form -->
-                <?php print $form->render(); ?>
+                    <!-- Login Form -->
+                    <?php print $form->render(); ?>
+                </div>
             </section>
         </main>
 

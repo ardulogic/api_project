@@ -1,5 +1,4 @@
 <?php
-
 require '../bootloader.php';
 
 $form = new \App\Users\Views\RegisterForm();
@@ -24,7 +23,6 @@ switch (get_form_action()) {
     default:
         $success = false;
 }
-
 ?>
 <html>
     <head>
@@ -47,17 +45,19 @@ switch (get_form_action()) {
         <!-- Main Content -->        
         <main>
             <section class="wrapper">
-                <?php if ($success): ?>
-                    <h1>Registracija sėkminga!</h1>
-                    <p>
-                        Galite prisijungti paspaudę <a href="/login.php">čia!</a>
-                    </p>
-                <?php else: ?>
-                    <h1>Registruotis:</h1>
+                <div class="block">
+                    <?php if ($success): ?>
+                        <h1>Registracija sėkminga!</h1>
+                        <p>
+                            Galite prisijungti paspaudę <a href="/login.php">čia!</a>
+                        </p>
+                    <?php else: ?>
+                        <h1>Registruotis:</h1>
 
-                    <!-- Register Form -->
-                    <?php print $form->render(); ?>
-                <?php endif; ?>
+                        <!-- Register Form -->
+                        <?php print $form->render(); ?>
+                    <?php endif; ?>
+                </div>
             </section>
         </main>
 
