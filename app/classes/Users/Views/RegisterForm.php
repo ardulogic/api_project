@@ -43,11 +43,6 @@ class RegisterForm extends \Core\Views\Form {
             'buttons' => [
                 'submit' => [
                     'title' => 'Registruotis',
-                    'extra' => [
-                        'attr' => [
-                            'class' => 'green-btn'
-                        ]
-                    ]
                 ],
             ],
             'validators' => [

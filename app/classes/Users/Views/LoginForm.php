@@ -33,11 +33,6 @@ class LoginForm extends \Core\Views\Form {
             'buttons' => [
                 'submit' => [
                     'title' => 'Login',
-                    'extra' => [
-                        'attr' => [
-                            'class' => 'red-btn'
-                        ]
-                    ]
                 ],
             ],
             'validators' => [

@@ -15,7 +15,7 @@ class BaseForm extends \Core\Views\Form {
                     'type' => 'text',
                 ],
                 'surname' => [
-                    'label' => 'Pavarde',
+                    'label' => 'Pavardė',
                     'type' => 'text',
                 ],
                 'city' => [
@@ -26,11 +26,6 @@ class BaseForm extends \Core\Views\Form {
             'buttons' => [
                 'submit' => [
                     'title' => 'Submit',
-                    'extra' => [
-                        'attr' => [
-                            'class' => 'red-btn'
-                        ]
-                    ]
                 ],
             ]
         ];
