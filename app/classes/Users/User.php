@@ -18,15 +18,30 @@ class User {
     }
 
     public function setData($array) {
+        if (isset($array['id'])) {
+            $this->setId($array['id']);
+        } else {
+            $this->data['id'] = null;
+        }
+
         $this->setEmail($array['email'] ?? null);
         $this->setPassword($array['password'] ?? null);
     }
 
     public function getData() {
         return [
+            'id' => $this->getId(),
             'email' => $this->getEmail(),
             'password' => $this->getPassword()
         ];
+    }
+
+    public function setId(int $id) {
+        $this->data['id'] = $id;
+    }
+
+    public function getId() {
+        return $this->data['id'];
     }
 
     public function setEmail(String $email) {
