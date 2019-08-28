@@ -2,12 +2,11 @@
 
 namespace App\Participants;
 
-class Participant
-{
+class Participant {
+
     private $data = [];
 
-    public function __construct($data = null)
-    {
+    public function __construct($data = null) {
         if ($data) {
             $this->setData($data);
         } else {
@@ -20,13 +19,11 @@ class Participant
         }
     }
 
-
     /**
-     ** Sets all data from array
+     * * Sets all data from array
      * @param $array
      */
-    public function setData($array)
-    {
+    public function setData($array) {
         if (isset($array['id'])) {
             $this->setId($array['id']);
         } else {
@@ -37,13 +34,11 @@ class Participant
         $this->setCity($array['city'] ?? null);
     }
 
-
     /**
      * Gets all data as array
      * @return array
      */
-    public function getData()
-    {
+    public function getData() {
         return [
             'id' => $this->getId(),
             'name' => $this->getName(),
@@ -55,16 +50,14 @@ class Participant
     /**
      * @param int $id
      */
-    public function setId(int $id)
-    {
+    public function setId(int $id) {
         $this->data['id'] = $id;
     }
 
     /**
      * @return int|null
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->data['id'];
     }
 
@@ -72,8 +65,7 @@ class Participant
      * Sets name
      * @param string $name
      */
-    public function setName(string $name)
-    {
+    public function setName(string $name) {
         $this->data['name'] = $name;
     }
 
@@ -81,8 +73,7 @@ class Participant
      * Returns name
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->data['name'];
     }
 
@@ -90,16 +81,14 @@ class Participant
      * Sets data surname
      * @param string $surname
      */
-    public function setSurname(string $surname)
-    {
+    public function setSurname(string $surname) {
         $this->data['surname'] = $surname;
     }
 
     /**
      * @return mixed
      */
-    public function getSurname()
-    {
+    public function getSurname() {
         return $this->data['surname'];
     }
 
@@ -107,16 +96,15 @@ class Participant
      * Sets data city
      * @param string $city
      */
-    public function setCity(string $city)
-    {
+    public function setCity(string $city) {
         $this->data['city'] = $city;
     }
 
     /**
      * @return mixed
      */
-    public function getCity()
-    {
+    public function getCity() {
         return $this->data['city'];
     }
+
 }
