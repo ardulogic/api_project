@@ -11,6 +11,7 @@ class User {
             $this->setData($data);
         } else {
             $this->data = [
+                'id' => null,
                 'email' => null,
                 'password' => null
             ];
