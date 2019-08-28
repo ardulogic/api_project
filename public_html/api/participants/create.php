@@ -31,7 +31,7 @@ function form_success($filtered_input, $form) {
     $model = new \App\Participants\Model();
     $id = $model->insert($participant);
 
-    if ($id) {
+    if ($id !== false) {
         $participant->setId($id);
         $response->setData($participant->getData());
     } else {
