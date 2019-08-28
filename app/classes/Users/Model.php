@@ -29,11 +29,13 @@ class Model
      */
     public function get($conditions = []) {
         $users = [];
+        
         $rows = App::$db->getRowsWhere($this->table_name, $conditions);
         foreach ($rows as $row_id => $row) {
             $row['id'] = $row_id;
             $users[] = new User($row);
         }
+        
         return $users;
     }
 
