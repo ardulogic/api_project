@@ -2,7 +2,7 @@
 
 namespace Core;
 
-class FileDB {
+class FileDB  {
 
     private $file_name;
 

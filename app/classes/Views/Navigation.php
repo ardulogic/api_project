@@ -10,14 +10,14 @@ class Navigation extends \Core\View {
         parent::__construct($data);
 
         $this->addLink('left', '/', 'Home');
-
+        
         if (App::$session->userLoggedIn()) {
             $user = App::$session->getUser();
             $label = $user->getEmail();
             $this->addLink('right', '/logout.php', "Logout($label)");
         } else {
-            $this->addLink('right', '/login.php', 'Login');
-            $this->addLink('right', '/register.php', 'Register');            
+            $this->addLink('right', '/login.php', 'Prisijungti');
+            $this->addLink('right', '/register.php', 'Registruotis');            
         }
     }
 

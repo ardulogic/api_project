@@ -4,12 +4,11 @@ namespace App\Participants;
 
 use \App\App;
 
-class Model
-{
+class Model {
+
     private $table_name = 'participants';
 
-    public function __construct()
-    {
+    public function __construct() {
         App::$db->createTable($this->table_name);
     }
 
@@ -18,8 +17,7 @@ class Model
      * @param Participant $person
      * @return bool
      */
-    public function insert(Participant $person)
-    {
+    public function insert(Participant $person) {
         return App::$db->insertRow($this->table_name, $person->getData());
     }
 
@@ -27,14 +25,14 @@ class Model
      * @param array $conditions
      * @return array
      */
-    public function get($conditions = [])
-    {
+    public function get($conditions = []) {
         $participants = [];
         $rows = App::$db->getRowsWhere($this->table_name, $conditions);
         foreach ($rows as $row_id => $row_data) {
             $row_data['id'] = $row_id;
             $participants[] = new Participant($row_data);
         }
+        
         return $participants;
     }
 
@@ -42,8 +40,7 @@ class Model
      * @param Participant $person
      * @return bool
      */
-    public function update(Participant $person)
-    {
+    public function update(Participant $person) {
         return App::$db->updateRow($this->table_name, $person->getId(), $person->getData());
     }
 
@@ -52,13 +49,11 @@ class Model
      * @param Participant $person
      * @return bool
      */
-    public function delete(Participant $person)
-    {
+    public function delete(Participant $person) {
         return App::$db->deleteRow($this->table_name, $person->getId());
     }
 
-    public function __destruct()
-    {
+    public function __destruct() {
         App::$db->save();
     }
 

@@ -190,8 +190,8 @@ const forms = {
             hide: function (form) {
                 const errors = form.querySelectorAll('.field-error');
                 if (errors) {
-                    Array.prototype.forEach.call(errors, function (node) {
-                        node.remove();
+                    errors.forEach(node => {
+                        node.remove();                 
                     });
                 }
             }
